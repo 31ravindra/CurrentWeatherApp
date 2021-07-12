@@ -12,6 +12,15 @@ Show current weather of Any City Enter by User.
 - work in both Potrait and Landscape Mode.
 
 
+Requirements -
+version - iOS13+
+Xcode - 12.0.1
+swift 5
+
+Run- 
+Open WeatherApp.xcodeproj in Xcode 12.0.1 and run the application in simulator or device iOS 13+ version
+
+
 <img width="384" alt="Screenshot 2021-07-12 at 9 41 34 AM" src="https://user-images.githubusercontent.com/20208162/125229912-5d976580-e2f5-11eb-8884-757d6c01c646.png">
 
 

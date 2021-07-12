@@ -12,13 +12,15 @@ Show current weather of Any City Enter by User.
 - work in both Potrait and Landscape Mode.
 
 
-<img width="382" alt="Screenshot 2021-07-12 at 9 34 37 AM" src="https://user-images.githubusercontent.com/20208162/125229630-d0eca780-e2f4-11eb-8091-b387eeb8a161.png">
+<img width="384" alt="Screenshot 2021-07-12 at 9 41 34 AM" src="https://user-images.githubusercontent.com/20208162/125229912-5d976580-e2f5-11eb-8884-757d6c01c646.png">
+
 
 <img width="376" alt="Screenshot 2021-07-12 at 9 35 03 AM" src="https://user-images.githubusercontent.com/20208162/125229695-e9f55880-e2f4-11eb-8ac1-1db981aabaaf.png">
 
 <img width="373" alt="Screenshot 2021-07-12 at 9 35 14 AM" src="https://user-images.githubusercontent.com/20208162/125229712-f37ec080-e2f4-11eb-9697-d2bc162969d3.png">
 
-<img width="824" alt="Screenshot 2021-07-12 at 9 35 35 AM" src="https://user-images.githubusercontent.com/20208162/125229723-f7aade00-e2f4-11eb-8ba6-717ccef8bc41.png">
+<img width="816" alt="Screenshot 2021-07-12 at 9 43 07 AM" src="https://user-images.githubusercontent.com/20208162/125230039-9cc5b680-e2f5-11eb-9740-f7205b7a25a8.png">
+
 
 
 

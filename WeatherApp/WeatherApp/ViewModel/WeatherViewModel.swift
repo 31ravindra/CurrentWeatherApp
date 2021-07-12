@@ -17,7 +17,7 @@ class WeatherViewModel {
     }
     
     var bindWeatherViewModelToController : (() -> ()) = {}
-    var errorClouser : ((_ error: Error) -> Void)?
+    var errorClouser : ((_ error: MyError) -> Void)?
     init(cityName: String) {
         self.apiService =  ServiceManagerLayer()
         callFuncToGetWeatherData(cityName: cityName)
@@ -34,7 +34,7 @@ class WeatherViewModel {
         paramDict["units"] = "metric"
         DispatchQueue.global().async {
             self.apiService.sendRequest(url, parameters: paramDict, completion: {[weak self] (weathData, error) in
-                if error == nil {
+                if weathData != nil {
                     self?.weatherData = weathData
                 } else {
                     self?.errorClouser?(error!)

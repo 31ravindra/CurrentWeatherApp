@@ -7,10 +7,20 @@
 
 import Foundation
 
+public struct MyError: Error {
+    let msg: String
+
+}
+
+extension MyError: LocalizedError {
+    public var errorDescription: String? {
+            return NSLocalizedString(msg, comment: "")
+    }
+}
 
 class ServiceManagerLayer  {
     
-    func sendRequest(_ url: String, parameters: [String: String], completion: @escaping (CityWeatherResponse?, Error?) -> Void) {
+    func sendRequest(_ url: String, parameters: [String: String], completion: @escaping (CityWeatherResponse?, MyError?) -> Void) {
         var components = URLComponents(string: url)!
         components.queryItems = parameters.map { (key, value) in
             URLQueryItem(name: key, value: value)
@@ -25,7 +35,7 @@ class ServiceManagerLayer  {
                 200 ..< 300 ~= response.statusCode,           // is statusCode 2XX
                 error == nil                                  // was there no error
             else {
-                completion(nil, error)
+                completion(nil, MyError(msg: "No City Found"))
                 return
             }
             let jsonDecoder = JSONDecoder()

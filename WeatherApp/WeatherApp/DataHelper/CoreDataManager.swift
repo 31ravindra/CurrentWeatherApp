@@ -36,15 +36,26 @@ class CoreDataManager {
         let fetchRequest:NSFetchRequest<Weather> = Weather.fetchRequest()
         
         var wea:[Weather]? = nil
-        
+        let wData = Weather(context: viewContext)
         let timeSort = NSSortDescriptor(key:"lastUpdated", ascending:false)
         
         fetchRequest.sortDescriptors = [timeSort]
         do {
             wea = try viewContext.fetch(fetchRequest)
-            return wea?[0]
+            
+            if wea?.count ?? 0 > 0 {
+                return wea?[0]
+            } else {
+                return wData
+            }
+            
         } catch {
-            return wea?[0]
+            if wea?.count ?? 0 > 0 {
+                return wea?[0]
+            } else {
+                return wData
+            }
+            
         }
     }
     

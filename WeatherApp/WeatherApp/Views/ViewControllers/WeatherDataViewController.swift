@@ -65,10 +65,10 @@ class WeatherDataViewController: UIViewController {
             let lastUpdatedWea = coreDataModel.getLastUpdatedData()
             txtEnterCity.text = lastUpdatedWea?.city
             lblDesc.text = lastUpdatedWea?.desc
-            lblTemp.text = "\(lastUpdatedWea?.temp ?? 0.0)"
-            lblMinTemp.text = "\(lastUpdatedWea?.mintemp ?? 0.0)"
-            lblMaxTemp.text = "\(lastUpdatedWea?.maxtemp ?? 0.0)"
-            lblHumidity.text = "\(lastUpdatedWea?.humidity ?? 0.0)"
+            lblTemp.text = "\(lastUpdatedWea?.temp ?? 0.0) 'C"
+            lblMinTemp.text = "\(lastUpdatedWea?.mintemp ?? 0.0) 'C"
+            lblMaxTemp.text = "\(lastUpdatedWea?.maxtemp ?? 0.0) 'C"
+            lblHumidity.text = "\(lastUpdatedWea?.humidity ?? 0.0)% "
             guard let imgData = lastUpdatedWea?.icon else {
                 return
             }
@@ -106,8 +106,9 @@ class WeatherDataViewController: UIViewController {
             
         }
         self.weatherViewModel.errorClouser = {[weak self](error) in
-            let errMsg = error.localizedDescription
-            self?.showToast(message: errMsg, font: UIFont.systemFont(ofSize: 15.0))
+            DispatchQueue.main.async {
+                self?.showToast(message: error.msg, font: UIFont.systemFont(ofSize: 15.0))
+            } 
         }
     }
     
